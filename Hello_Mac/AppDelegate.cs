@@ -19,6 +19,11 @@ namespace Hello_Mac
       mainWindowController = new MainWindowController();
       mainWindowController.Window.MakeKeyAndOrderFront(this);
     }
+
+    public override bool ApplicationShouldTerminateAfterLastWindowClosed(NSApplication sender)
+    {
+      return true;
+    }
   }
 }
 
