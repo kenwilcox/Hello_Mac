@@ -9,6 +9,8 @@ namespace Hello_Mac
 {
   public partial class MainWindow : MonoMac.AppKit.NSWindow
   {
+    private int numberOfTimesClicked = 0;
+
     #region Constructors
 
     // Called when created from unmanaged code
@@ -30,6 +32,21 @@ namespace Hello_Mac
     }
 
     #endregion
+
+    public override void AwakeFromNib()
+    {
+      base.AwakeFromNib();
+
+      // Set the initial value for the label
+      ClickedLabel.StringValue = "Button has not been clicked yet.";
+    }
+
+    partial void ClickedButton(NSObject sender)
+    {
+
+      // Update counter and label
+      ClickedLabel.StringValue = string.Format("The button has been clicked {0} time{1}.", ++numberOfTimesClicked, (numberOfTimesClicked < 2) ? "" : "s");
+    }
   }
 }
 

@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace Hello_Mac
 {
-	[Register ("MainWindowController")]
-	partial class MainWindowController
+	[Register ("MainWindow")]
+	partial class MainWindow
 	{
 		[Outlet]
 		MonoMac.AppKit.NSTextField ClickedLabel { get; set; }
@@ -27,8 +27,8 @@ namespace Hello_Mac
 		}
 	}
 
-	[Register ("MainWindow")]
-	partial class MainWindow
+	[Register ("MainWindowController")]
+	partial class MainWindowController
 	{
 		
 		void ReleaseDesignerOutlets ()
